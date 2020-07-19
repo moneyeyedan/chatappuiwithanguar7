@@ -1,0 +1,57 @@
+.message-box {
+  display: flex;
+  overflow-y: scroll;
+  background: rgb(245, 245, 245);
+  height: 88vh;
+}
+.list-tag {
+  list-style: none;
+
+}
+.content-box {
+  overflow-x: hidden;
+}
+.exampleContainer {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px !important;
+}
+.bootstrapPadding {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+.userList {
+  background: navy;
+}
+.searchBoxInput {
+  width: 90%;
+  min-height: 40px;
+  border-radius: 5px;
+}
+.buttonSend {
+  width: 10%;
+  min-height: 40px;
+  background: navy;
+  color: white;
+  border-radius: 5px;
+  margin-left: -1px;
+}
+.ulStyle {
+  width: 100%;
+    /* margin-left: 0px !important; */
+    /* margin-top:10px; */
+    padding-left: 10px;
+    padding-right: 10px
+}
+.liStyle {
+  background: #c7c7c7;
+  padding: 10px;
+  margin-top:10px;
+  border-radius: 10px 10px 10px 0px;
+}
+.mineStyle {
+  background: #c7c7c7;
+  padding: 10px;
+  margin-top:10px;
+  border-radius: 10px 10px 0px 0px;
+}
