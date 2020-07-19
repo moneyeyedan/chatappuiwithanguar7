@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class SocketService {
   //client host is provide here
-  socket = io('ws://https://calm-shore-46936.herokuapp.com');
+  socket = io('https://calm-shore-46936.herokuapp.com');
   constructor() { }
   socketConnect(value) {
     this.socket.emit('adduser', value);
