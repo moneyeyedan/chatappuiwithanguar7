@@ -11,28 +11,46 @@
       <input type="text" [(ngModel)]="message">
       <button (click)="sendMessage(message)">send</button>
     </div> -->
-    <div class="col-md-3 userList">
+    <div class="col-md-3 d-none d-sm-block-down userList">
       <ul>
+        <li style="color: tomato;list-style: none;margin-left: -22px;">Online Users</li>
         <li *ngFor="let user of users" style="color: white;list-style: none;margin-left: -22px;margin-top:10px;">
-          {{user}}
+          <i class="fas fa-dot-circle" style="font-size: 10px;
+          color: #f35422;"></i>&nbsp;&nbsp;{{user}}
         </li>
       </ul>
     </div>
-    <div class="col-md-9 bootstrapPadding">
-      <div class="message-box">
+    <div class="col-md-9 col-sm-12 bootstrapPadding">
+      <div class="message-box" #scrollMe>
         <ul  class="list-tag ulStyle">
           <ng-container *ngIf="true else mine">
-            <li class="liStyle" *ngFor="let msg of messages"> <span>{{msg}}</span></li>
+            <li class="liStyle" *ngFor="let message of messages">
+              <div>
+                <span style="color: tomato;">{{message.username}}</span>
+              </div>
+              <div>
+                <span>{{message.msg}}</span>
+              </div>
+             </li>
           </ng-container>
           <ng-template #mine>
-            <li class="mineStyle" *ngFor="let msg of messages"> <span>{{msg}}</span></li>
+            <li class="mineStyle" *ngFor="let message of messages">
+              <div>
+                <span style="color: tomato;">{{message.username}}</span>
+              </div>
+              <div>
+                <span>{{message.msg}}</span>
+              </div>
+            </li>
           </ng-template>
         </ul>
       </div>
 
       <div>
-        <input type='text' class="searchBoxInput" [(ngModel)]="message">
-        <button class="buttonSend" (click)="sendMessage(message)">=></button>
+        <form class="chatForm" #chatForm="ngForm" action="" (submit)="sendMessage(message)" autocomplete="off" method="POST">
+           <input type='text' class="searchBoxInput" name="msg" required [(ngModel)]="message">
+           <button type="submit" class="buttonSend" [disabled]="!chatForm.form.valid"><i class="fas fa-paper-plane"></i></button>
+        </form>
       </div>
     </div>
   </div>
